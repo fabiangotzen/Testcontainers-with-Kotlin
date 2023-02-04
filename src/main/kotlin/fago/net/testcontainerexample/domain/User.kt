@@ -1,7 +1,6 @@
 package fago.net.testcontainerexample.domain
 
 import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
 import jakarta.persistence.Id
 import jakarta.persistence.Table
 import java.util.*
@@ -10,7 +9,7 @@ import java.util.*
 @Table(name = "\"USER\"")
 class User(
     @Id
-    var id: UUID? = null,
+    var id: UUID,
     var name: String,
     var age: Int
 )

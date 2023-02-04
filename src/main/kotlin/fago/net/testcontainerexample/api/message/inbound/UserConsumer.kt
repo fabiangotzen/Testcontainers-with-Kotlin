@@ -9,6 +9,7 @@ import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Component
 
 @KafkaListener(id = "myId", topics = ["userTopic"])
+@Component
 class UserConsumer(private val userService: UserService) {
 
     @Bean
