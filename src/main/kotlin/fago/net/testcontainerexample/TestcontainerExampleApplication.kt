@@ -1,26 +1,28 @@
 package fago.net.testcontainerexample
 
-import org.apache.kafka.clients.admin.NewTopic
+import fago.net.testcontainerexample.domain.User
+import fago.net.testcontainerexample.domain.UserDto
+import org.apache.kafka.clients.producer.ProducerConfig
 import org.springframework.boot.ApplicationRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 import org.springframework.kafka.annotation.EnableKafka
-import org.springframework.kafka.annotation.KafkaListener
+import org.springframework.kafka.core.DefaultKafkaProducerFactory
 import org.springframework.kafka.core.KafkaTemplate
+import org.springframework.kafka.core.ProducerFactory
+import java.util.*
+
 
 @SpringBootApplication
 @EnableKafka
-class TestcontainerExampleApplication{
+class TestcontainerExampleApplication {
 
-@Bean
-fun topic() = NewTopic("topic1", 10, 1)
-
-@Bean
-fun runner(template: KafkaTemplate<String?, String?>) =
-    ApplicationRunner { template.send("topic1", "test") }
+    @Bean
+    fun runner(template: KafkaTemplate<String?, UserDto?>) =
+        ApplicationRunner { template.send("userTopic", UserDto(UUID.randomUUID(),"testUser", 10)) }
 
 }
-
 fun main() {
+    runApplication<TestcontainerExampleApplication>()
 }
