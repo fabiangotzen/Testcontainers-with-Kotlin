@@ -20,6 +20,4 @@ class UserConsumer(private val userService: UserService) {
         userService.save(userDto);
     }
 
-
-
 }
