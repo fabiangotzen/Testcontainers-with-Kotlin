@@ -1,4 +1,4 @@
-package fago.net.testcontainerexample.domain
+package fago.net.testcontainers
 
 import java.util.*
 

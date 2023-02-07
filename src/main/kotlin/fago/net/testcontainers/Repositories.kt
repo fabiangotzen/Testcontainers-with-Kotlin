@@ -1,6 +1,5 @@
-package fago.net.testcontainerexample.infrastructure
+package fago.net.testcontainers
 
-import fago.net.testcontainerexample.domain.User
 import org.springframework.data.repository.CrudRepository
 import java.util.*
 

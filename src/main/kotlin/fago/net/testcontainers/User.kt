@@ -1,4 +1,4 @@
-package fago.net.testcontainerexample.domain
+package fago.net.testcontainers
 
 import jakarta.persistence.Entity
 import jakarta.persistence.Id

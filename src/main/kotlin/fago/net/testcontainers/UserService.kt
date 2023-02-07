@@ -1,11 +1,7 @@
-package fago.net.testcontainerexample.service
+package fago.net.testcontainers
 
-import fago.net.testcontainerexample.domain.User
-import fago.net.testcontainerexample.domain.UserDto
-import fago.net.testcontainerexample.infrastructure.UserRepository
 import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service
-import java.util.*
 
 @Service
 @Transactional

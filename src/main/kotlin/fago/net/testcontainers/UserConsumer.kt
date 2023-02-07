@@ -1,7 +1,5 @@
-package fago.net.testcontainerexample.api.message.inbound
+package fago.net.testcontainers
 
-import fago.net.testcontainerexample.domain.UserDto
-import fago.net.testcontainerexample.service.UserService
 import org.apache.kafka.clients.admin.NewTopic
 import org.springframework.context.annotation.Bean
 import org.springframework.kafka.annotation.KafkaHandler

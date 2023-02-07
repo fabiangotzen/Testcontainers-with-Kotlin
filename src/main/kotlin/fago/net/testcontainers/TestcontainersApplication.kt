@@ -1,6 +1,5 @@
-package fago.net.testcontainerexample
+package fago.net.testcontainers
 
-import fago.net.testcontainerexample.domain.UserDto
 import org.springframework.boot.ApplicationRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -12,7 +11,7 @@ import java.util.*
 
 @SpringBootApplication
 @EnableKafka
-class TestcontainerExampleApplication {
+class TestcontainersApplication {
 
     @Bean
     fun runner(template: KafkaTemplate<String?, UserDto?>) =
@@ -20,5 +19,5 @@ class TestcontainerExampleApplication {
 
 }
 fun main() {
-    runApplication<TestcontainerExampleApplication>()
+    runApplication<TestcontainersApplication>()
 }

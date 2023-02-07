@@ -1,7 +1,5 @@
-package fago.net.testcontainerexample.api.message.inbound
+package fago.net.testcontainers
 
-import fago.net.testcontainerexample.UserProducer
-import fago.net.testcontainerexample.infrastructure.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.util.TestPropertyValues

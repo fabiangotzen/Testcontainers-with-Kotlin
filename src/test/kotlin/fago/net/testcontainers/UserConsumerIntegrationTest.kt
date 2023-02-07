@@ -1,8 +1,5 @@
-package fago.net.testcontainerexample.api.message.inbound
+package fago.net.testcontainers
 
-import fago.net.testcontainerexample.UserProducer
-import fago.net.testcontainerexample.domain.UserDto
-import fago.net.testcontainerexample.infrastructure.UserRepository
 import org.awaitility.kotlin.untilNotNull
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.assertAll
