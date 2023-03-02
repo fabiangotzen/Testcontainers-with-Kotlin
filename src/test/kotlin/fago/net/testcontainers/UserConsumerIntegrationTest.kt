@@ -1,20 +1,22 @@
 package fago.net.testcontainers
 
+import org.awaitility.kotlin.await
 import org.awaitility.kotlin.untilNotNull
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
 import org.springframework.beans.factory.annotation.Autowired
 import java.util.*
 import java.util.logging.Logger
 
-@IntegrationTest
+@IntegrationTest(properties = [""])
 class UserConsumerIntegrationTest @Autowired constructor(
     private val userRepository: UserRepository,
     private val userProducer: UserProducer) {
 
     val LOG = Logger.getLogger(this.javaClass.name)
 
-    @org.junit.jupiter.api.Test
+    @Test
     fun testConsumeUserMessage() {
         // arrange
         val userDto = UserDto(UUID.randomUUID(), "TestUser", 10);
@@ -23,7 +25,7 @@ class UserConsumerIntegrationTest @Autowired constructor(
         this.userProducer.send(userDto)
         LOG.info("Sending message with user: " + userDto.name)
 
-        org.awaitility.kotlin.await untilNotNull { this.userRepository.findById(userDto.id).get() }
+        await untilNotNull { this.userRepository.findById(userDto.id).get() }
         val persistedUser = this.userRepository.findById(userDto.id).get()
 
         // assert
