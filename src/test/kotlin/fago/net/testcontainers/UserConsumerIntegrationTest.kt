@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired
 import java.util.*
 import java.util.logging.Logger
 
-
-class UserConsumerIntegrationTest(@Autowired userRepository: UserRepository, @Autowired userProducer: UserProducer) : AbstractIntegrationTest(userRepository, userProducer) {
+@IntegrationTest
+class UserConsumerIntegrationTest @Autowired constructor(
+    private val userRepository: UserRepository,
+    private val userProducer: UserProducer) {
 
     val LOG = Logger.getLogger(this.javaClass.name)
 
